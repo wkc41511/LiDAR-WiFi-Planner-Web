@@ -124,6 +124,20 @@ a:hover {
   font-weight: 700;
 }
 
+.language-picker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.language-label {
+  color: #dcfff7;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
 select {
   min-width: 132px;
   color: var(--text);
