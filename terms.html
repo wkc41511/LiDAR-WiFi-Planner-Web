@@ -3,83 +3,51 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
   <meta name="description" content="Terms of Use for LiDAR WiFi Planner.">
-  <title>LiDAR WiFi Planner - Terms of Use</title>
+  <title>LiDAR WiFi Planner Terms of Use</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <header class="site-header">
-    <nav class="nav" aria-label="Primary">
-      <a class="brand" href="./">
-        <strong>LiDAR WiFi Planner</strong>
-        <span>Terms of Use</span>
-      </a>
-      <div class="links">
-        <a href="support.html">Support</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html" aria-current="page">Terms of Use</a>
-      </div>
-    </nav>
+<body data-page="terms">
+  <header class="topbar" aria-label="Site header">
+    <a class="brand" href="./">
+      <strong>LiDAR WiFi Planner</strong>
+      <span data-i18n="topline">Terms of Use</span>
+    </a>
+    <div class="topbar-controls">
+      <nav class="navlinks" aria-label="Primary">
+        <a href="./" data-nav="home" data-i18n="navHome">Home</a>
+        <a href="support.html" data-nav="support" data-i18n="navSupport">Support</a>
+        <a href="privacy.html" data-nav="privacy" data-i18n="navPrivacy">Privacy Policy</a>
+        <a href="terms.html" data-nav="terms" data-i18n="navTerms">Terms of Use</a>
+      </nav>
+      <label>
+        <span class="sr-only" data-i18n="languageLabel">Language</span>
+        <select id="languageSelect" aria-label="Language">
+          <option value="zh-Hant">繁體中文</option>
+          <option value="en">English</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="zh-Hans">简体中文</option>
+        </select>
+      </label>
+    </div>
   </header>
 
   <main>
     <div class="hero">
-      <p class="eyebrow">Terms of Use</p>
-      <h1>使用條款</h1>
-      <p class="summary">使用 LiDAR WiFi Planner 代表你同意以下條款，以及 Apple App Store 適用的標準 EULA 與購買規則。</p>
+      <div class="eyebrow" data-i18n="eyebrow">Terms of Use</div>
+      <h1 data-i18n="title">Terms of Use</h1>
+      <p class="summary" data-i18n="summary">Terms for using LiDAR WiFi Planner.</p>
     </div>
 
-    <article class="content">
-      <div class="meta-box">
-        <div>
-          <span>生效日期</span>
-          <strong>2026 年 6 月 19 日</strong>
-        </div>
-        <div>
-          <span>聯絡信箱</span>
-          <strong><a href="mailto:app-dev@almx.cc">app-dev@almx.cc</a></strong>
-        </div>
-      </div>
-
-      <section>
-        <h2>Apple 標準 EULA</h2>
-        <p>LiDAR WiFi Planner 採用 Apple 標準終端使用者授權合約。若本頁內容與 Apple 標準 EULA 或 App Store 規則有衝突，依 Apple 適用條款為準。</p>
-        <p><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple Standard End User License Agreement</a></p>
-      </section>
-
-      <section>
-        <h2>App 用途</h2>
-        <p>本 App 是 Wi-Fi / LAN 規劃與診斷工具，提供 LiDAR 平面圖、site survey 量測、熱力圖、模擬規劃、控制器輔助讀值與匯出功能。量測結果會受設備、環境、測速端點、ISP、區域網路負載與使用方式影響，僅供網路規劃與故障排查參考。</p>
-      </section>
-
-      <section>
-        <h2>使用者責任</h2>
-        <ul>
-          <li>請只在你擁有、管理或被授權測試的網路環境中使用本 App。</li>
-          <li>若使用控制器進階檢測，請確認你有權連線並讀取該設備資訊。</li>
-          <li>請自行確認匯出的平面圖、截圖或測試資料是否包含敏感資訊，再分享給第三方。</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>訂閱與購買</h2>
-        <p>App 內購買與訂閱由 Apple App Store 處理。價格、試用、續訂、退款與取消訂閱依 Apple 顯示與 Apple 帳號設定為準。App 會根據 Apple 提供的購買狀態啟用對應功能或圖面數量。</p>
-      </section>
-
-      <section>
-        <h2>服務限制與免責</h2>
-        <p>本 App 會盡力提供有用的量測與規劃資訊，但不保證任何特定網路效能、覆蓋結果、控制器相容性或測速準確度。你應依實際網路環境、設備規格與專業判斷進行部署或調整。</p>
-      </section>
-
-      <section>
-        <h2>條款更新</h2>
-        <p>我們可能會因功能、法規或 App Store 要求更新本條款。更新後會在此頁面公布新的生效日期。</p>
-      </section>
-    </article>
+    <article class="card" id="content"></article>
   </main>
 
-  <footer class="site-footer">
-    Copyright © 2026 ALMX. All rights reserved.
+  <footer class="footer">
+    <span data-i18n="footer">Copyright © 2026 ALMX. All rights reserved.</span>
   </footer>
+
+  <script src="site.js"></script>
 </body>
 </html>
