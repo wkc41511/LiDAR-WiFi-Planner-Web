@@ -7,6 +7,10 @@ const translations = {
   "zh-Hant": {
     htmlLang: "zh-Hant",
     languageLabel: "語言",
+    themeLabel: "外觀:",
+    themeAuto: "自動",
+    themeLight: "白天",
+    themeDark: "夜晚",
     navHome: "首頁",
     navSupport: "支援",
     navPrivacy: "隱私權政策",
@@ -71,6 +75,10 @@ const translations = {
   en: {
     htmlLang: "en",
     languageLabel: "Language",
+    themeLabel: "Theme:",
+    themeAuto: "Auto",
+    themeLight: "Light",
+    themeDark: "Dark",
     navHome: "Home",
     navSupport: "Support",
     navPrivacy: "Privacy Policy",
@@ -111,6 +119,10 @@ const translations = {
   ja: {
     htmlLang: "ja",
     languageLabel: "言語",
+    themeLabel: "外観:",
+    themeAuto: "自動",
+    themeLight: "ライト",
+    themeDark: "ダーク",
     navHome: "ホーム",
     navSupport: "サポート",
     navPrivacy: "プライバシーポリシー",
@@ -124,6 +136,10 @@ const translations = {
   ko: {
     htmlLang: "ko",
     languageLabel: "언어",
+    themeLabel: "테마:",
+    themeAuto: "자동",
+    themeLight: "라이트",
+    themeDark: "다크",
     navHome: "홈",
     navSupport: "지원",
     navPrivacy: "개인정보 처리방침",
@@ -137,6 +153,10 @@ const translations = {
   "zh-Hans": {
     htmlLang: "zh-Hans",
     languageLabel: "语言",
+    themeLabel: "外观:",
+    themeAuto: "自动",
+    themeLight: "白天",
+    themeDark: "夜晚",
     navHome: "首页",
     navSupport: "支持",
     navPrivacy: "隐私政策",
@@ -164,6 +184,7 @@ const aliases = {
 
 const page = document.body.dataset.page || "home";
 const select = document.getElementById("languageSelect");
+const themeSelect = document.getElementById("themeSelect");
 
 function preferredLanguage() {
   const stored = localStorage.getItem("siteLanguage");
@@ -181,6 +202,21 @@ function preferredLanguage() {
     if (aliases[base]) return aliases[base];
   }
   return "zh-Hant";
+}
+
+function preferredTheme() {
+  const stored = localStorage.getItem("siteTheme");
+  return ["auto", "light", "dark"].includes(stored) ? stored : "auto";
+}
+
+function applyTheme(theme) {
+  if (theme === "auto") {
+    document.documentElement.removeAttribute("data-theme");
+  } else {
+    document.documentElement.dataset.theme = theme;
+  }
+  themeSelect.value = theme;
+  localStorage.setItem("siteTheme", theme);
 }
 
 function renderMeta(items) {
@@ -229,11 +265,14 @@ function applyLanguage(lang) {
       else node.removeAttribute("aria-current");
     });
     document.getElementById("content").innerHTML = renderPage(pageData);
-    select.value = lang;
-    localStorage.setItem("siteLanguage", lang);
+        select.value = lang;
+        themeSelect.value = preferredTheme();
+        localStorage.setItem("siteLanguage", lang);
     document.body.classList.remove("is-switching");
   }, 80);
 }
 
 select.addEventListener("change", (event) => applyLanguage(event.target.value));
+themeSelect.addEventListener("change", (event) => applyTheme(event.target.value));
+applyTheme(preferredTheme());
 applyLanguage(preferredLanguage());

@@ -124,13 +124,15 @@ a:hover {
   font-weight: 700;
 }
 
-.language-picker {
+.language-picker,
+.theme-picker {
   display: inline-flex;
   align-items: center;
   gap: 8px;
 }
 
-.language-label {
+.language-label,
+.theme-label {
   color: #dcfff7;
   font-size: 13px;
   font-weight: 700;
@@ -139,7 +141,7 @@ a:hover {
 }
 
 select {
-  min-width: 132px;
+  min-width: 118px;
   color: var(--text);
   background: rgba(8, 23, 27, 0.78);
   border: 1px solid rgba(181, 232, 224, 0.28);
@@ -320,6 +322,277 @@ ul {
 body.is-switching [data-i18n],
 body.is-switching #content {
   opacity: 0;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #edf7f5;
+    --panel: rgba(255, 255, 255, 0.78);
+    --panel-strong: rgba(247, 253, 251, 0.94);
+    --border: rgba(4, 95, 85, 0.18);
+    --text: #10211f;
+    --muted: #4f6865;
+    --accent: #067f72;
+    --accent-2: #4f9f28;
+    --shadow: rgba(9, 30, 27, 0.16);
+    color-scheme: light;
+  }
+
+  body {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.42), rgba(237, 247, 245, 0.94)),
+      url("assets/privacy-bg-ink-wifi.png") center top / cover no-repeat fixed,
+      var(--bg);
+  }
+
+  body::before {
+    background:
+      radial-gradient(circle at 16% 10%, rgba(8, 127, 114, 0.14), transparent 34%),
+      radial-gradient(circle at 86% 8%, rgba(79, 159, 40, 0.12), transparent 30%),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.52) 42%, rgba(237, 247, 245, 0.9));
+  }
+
+  .topbar {
+    background: rgba(250, 255, 253, 0.78);
+    border-bottom-color: rgba(4, 95, 85, 0.16);
+  }
+
+  .brand strong,
+  h1,
+  h2 {
+    color: var(--text);
+  }
+
+  .brand span,
+  .meta span {
+    color: var(--muted);
+  }
+
+  .navlinks a {
+    color: #24524c;
+  }
+
+  .navlinks a[aria-current="page"],
+  .language-label,
+  .theme-label,
+  .eyebrow {
+    color: #063f39;
+  }
+
+  select {
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.86);
+    border-color: rgba(4, 95, 85, 0.26);
+  }
+
+  .hero {
+    text-shadow: 0 18px 42px rgba(255, 255, 255, 0.72);
+  }
+
+  .summary,
+  p,
+  li {
+    color: #294946;
+  }
+
+  .card,
+  .link-card {
+    background: linear-gradient(180deg, var(--panel), var(--panel-strong));
+    border-color: var(--border);
+    box-shadow: 0 24px 70px var(--shadow);
+  }
+
+  .meta div {
+    background: rgba(6, 127, 114, 0.06);
+    border-color: rgba(4, 95, 85, 0.14);
+  }
+
+  section {
+    border-top-color: rgba(4, 95, 85, 0.14);
+  }
+
+  .footer {
+    color: rgba(16, 33, 31, 0.72);
+  }
+}
+
+html[data-theme="light"] {
+  --bg: #edf7f5;
+  --panel: rgba(255, 255, 255, 0.78);
+  --panel-strong: rgba(247, 253, 251, 0.94);
+  --border: rgba(4, 95, 85, 0.18);
+  --text: #10211f;
+  --muted: #4f6865;
+  --accent: #067f72;
+  --accent-2: #4f9f28;
+  --shadow: rgba(9, 30, 27, 0.16);
+  color-scheme: light;
+}
+
+html[data-theme="light"] body {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.42), rgba(237, 247, 245, 0.94)),
+    url("assets/privacy-bg-ink-wifi.png") center top / cover no-repeat fixed,
+    var(--bg);
+}
+
+html[data-theme="light"] body::before {
+  background:
+    radial-gradient(circle at 16% 10%, rgba(8, 127, 114, 0.14), transparent 34%),
+    radial-gradient(circle at 86% 8%, rgba(79, 159, 40, 0.12), transparent 30%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.52) 42%, rgba(237, 247, 245, 0.9));
+}
+
+html[data-theme="light"] .topbar {
+  background: rgba(250, 255, 253, 0.78);
+  border-bottom-color: rgba(4, 95, 85, 0.16);
+}
+
+html[data-theme="light"] .brand strong,
+html[data-theme="light"] h1,
+html[data-theme="light"] h2 {
+  color: var(--text);
+}
+
+html[data-theme="light"] .brand span,
+html[data-theme="light"] .meta span {
+  color: var(--muted);
+}
+
+html[data-theme="light"] .navlinks a {
+  color: #24524c;
+}
+
+html[data-theme="light"] .navlinks a[aria-current="page"],
+html[data-theme="light"] .language-label,
+html[data-theme="light"] .theme-label,
+html[data-theme="light"] .eyebrow {
+  color: #063f39;
+}
+
+html[data-theme="light"] select {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.86);
+  border-color: rgba(4, 95, 85, 0.26);
+}
+
+html[data-theme="light"] .hero {
+  text-shadow: 0 18px 42px rgba(255, 255, 255, 0.72);
+}
+
+html[data-theme="light"] .summary,
+html[data-theme="light"] p,
+html[data-theme="light"] li {
+  color: #294946;
+}
+
+html[data-theme="light"] .card,
+html[data-theme="light"] .link-card {
+  background: linear-gradient(180deg, var(--panel), var(--panel-strong));
+  border-color: var(--border);
+  box-shadow: 0 24px 70px var(--shadow);
+}
+
+html[data-theme="light"] .meta div {
+  background: rgba(6, 127, 114, 0.06);
+  border-color: rgba(4, 95, 85, 0.14);
+}
+
+html[data-theme="light"] section {
+  border-top-color: rgba(4, 95, 85, 0.14);
+}
+
+html[data-theme="light"] .footer {
+  color: rgba(16, 33, 31, 0.72);
+}
+
+html[data-theme="dark"] {
+  --bg: #071012;
+  --panel: rgba(9, 20, 24, 0.78);
+  --panel-strong: rgba(9, 20, 24, 0.92);
+  --border: rgba(181, 232, 224, 0.18);
+  --text: #eef8f6;
+  --muted: #a8bfbc;
+  --accent: #58e0c5;
+  --accent-2: #a7f06d;
+  --shadow: rgba(0, 0, 0, 0.35);
+  color-scheme: dark;
+}
+
+html[data-theme="dark"] body {
+  background:
+    linear-gradient(180deg, rgba(4, 10, 12, 0.2), rgba(4, 10, 12, 0.88)),
+    url("assets/privacy-bg-ink-wifi.png") center top / cover no-repeat fixed,
+    var(--bg);
+}
+
+html[data-theme="dark"] body::before {
+  background:
+    radial-gradient(circle at 16% 10%, rgba(88, 224, 197, 0.2), transparent 34%),
+    radial-gradient(circle at 86% 8%, rgba(167, 240, 109, 0.13), transparent 30%),
+    linear-gradient(90deg, rgba(3, 9, 12, 0.9), rgba(3, 9, 12, 0.42) 42%, rgba(3, 9, 12, 0.86));
+}
+
+html[data-theme="dark"] .topbar {
+  background: rgba(4, 10, 12, 0.62);
+  border-bottom-color: rgba(181, 232, 224, 0.12);
+}
+
+html[data-theme="dark"] .brand strong,
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2 {
+  color: var(--text);
+}
+
+html[data-theme="dark"] .brand span,
+html[data-theme="dark"] .meta span {
+  color: var(--muted);
+}
+
+html[data-theme="dark"] .navlinks a {
+  color: #d8f4ef;
+}
+
+html[data-theme="dark"] .navlinks a[aria-current="page"] {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .language-label,
+html[data-theme="dark"] .theme-label,
+html[data-theme="dark"] .eyebrow {
+  color: #dcfff7;
+}
+
+html[data-theme="dark"] select {
+  color: var(--text);
+  background: rgba(8, 23, 27, 0.78);
+  border-color: rgba(181, 232, 224, 0.28);
+}
+
+html[data-theme="dark"] .hero {
+  text-shadow: 0 18px 44px rgba(0, 0, 0, 0.55);
+}
+
+html[data-theme="dark"] .summary {
+  color: #d1e6e2;
+}
+
+html[data-theme="dark"] p,
+html[data-theme="dark"] li {
+  color: #d5e7e4;
+}
+
+html[data-theme="dark"] .meta div {
+  background: rgba(255, 255, 255, 0.045);
+  border-color: rgba(181, 232, 224, 0.12);
+}
+
+html[data-theme="dark"] section {
+  border-top-color: rgba(181, 232, 224, 0.14);
+}
+
+html[data-theme="dark"] .footer {
+  color: rgba(238, 248, 246, 0.7);
 }
 
 @media (max-width: 820px) {
