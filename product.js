@@ -106,6 +106,44 @@ guide["zh-Hans"] = {
   ]
 };
 
+const detailedSteps = {
+  "zh-Hant": {
+    controllerHub: ["06", "控制器打開後看到什麼", "控制器頁不是只顯示連線成功，而是把控制器能讀到的網路真值整理成入口。你會先看到本機 client 的連線狀態，再看到整個控制器角度的 AP、client 與 RF 功能。", ["本機連線：SNR、關聯 AP、頻段、通道、IP。", "總覽：AP 數、client 數、SSID 與通道概況。", "功能入口：Clients、Roaming、AP load balancing、Trend history、Controller Config、Application visibility、Channels & RF、Controller status、Discovered services。"], "controllerHub"],
+    reportBuilder: ["08", "報告產生器長什麼樣", "報告產生器會先讓你選底圖、指標、圖例、判定方式與報告主題。它不是只把截圖丟進 PDF，而是依測點資料重新產生可交付的 A4 報告。", ["可選牆線底圖或含實景底圖。", "可勾選下載、延遲、抖動、丟包、綜合分數與 SNR。", "可加入比例尺、熱力圖、圖例、頁碼、合格判定與案場資訊。"], "reportBuilder"],
+    photoReport: ["09", "測點照片如何進報告", "在訊號偵測頁開啟測點照片後，每個測點可以拍一張現場參考照片。產生報告時打開 Attach site photos，照片會依測試編號附在報告後段。", ["照片是選用功能，預設不佔儲存空間。", "PDF 後端會用 3 × 3 網格整理照片，每頁最多 9 張。", "照片標籤會對應測點編號，方便驗收時回看現場位置。"], "photoReport"]
+  },
+  en: {
+    controllerHub: ["06", "What the Controller tab shows", "The Controller tab is more than a connection check. It turns controller-only network readings into a hub: local client details first, then AP, client, and RF tools from the controller's perspective.", ["Local connection: SNR, associated AP, band, channel, and IP.", "Overview: AP count, client count, SSIDs, and channel status.", "Feature entries: Clients, Roaming, AP load balancing, Trend history, Controller Config, Application visibility, Channels & RF, Controller status, and Discovered services."], "controllerHub"],
+    reportBuilder: ["08", "What the report builder looks like", "The report builder lets you choose base map, metrics, legends, verdicts, and visual theme. It is not a screenshot dump; it rebuilds an A4 handoff report from survey data.", ["Choose walls-only or real backdrop base maps.", "Select download, latency, jitter, loss, score, and SNR when available.", "Add scale bar, heatmap, legend, page numbers, acceptance verdict, and site information."], "reportBuilder"],
+    photoReport: ["09", "How site photos enter the report", "When point photos are enabled in Signal Survey, each survey point can carry a reference photo. Turn on Attach site photos in the report builder to append them to the PDF.", ["Photos are optional and disabled by default.", "The PDF appends a 3 × 3 photo grid, up to 9 photos per page.", "Photo labels match survey point numbers for acceptance review."], "photoReport"]
+  },
+  ja: {
+    controllerHub: ["06", "Controller タブで見える内容", "Controller タブは接続確認だけではありません。まず本機 client の状態を表示し、その後にコントローラー視点の AP、client、RF 関連機能へ進めます。", ["本機接続：SNR、接続 AP、周波数帯、チャンネル、IP。", "全体概要：AP 数、client 数、SSID、チャンネル状況。", "機能入口：Clients、Roaming、AP load balancing、Trend history、Controller Config、Application visibility、Channels & RF、Controller status、Discovered services。"], "controllerHub"],
+    reportBuilder: ["08", "レポート作成画面", "レポート作成画面では、ベースマップ、指標、凡例、判定、テーマを選べます。単なるスクリーンショットではなく、測定データから A4 レポートを再生成します。", ["壁線のみ、または実景底図付きのベースマップを選択。", "ダウンロード、遅延、ジッター、パケットロス、スコア、利用可能なら SNR を選択。", "スケールバー、ヒートマップ、凡例、ページ番号、合格判定、現場情報を追加できます。"], "reportBuilder"],
+    photoReport: ["09", "現場写真をレポートに入れる方法", "Signal Survey で測点写真を有効にすると、各測定点に現場写真を添付できます。レポート作成時に Attach site photos をオンにすると PDF の後半に追加されます。", ["写真は任意機能で、初期設定ではオフです。", "PDF 末尾に 3 × 3 の写真グリッドを追加し、1 ページ最大 9 枚を配置します。", "写真ラベルは測定点番号に対応し、検収時に確認しやすくなります。"], "photoReport"]
+  },
+  ko: {
+    controllerHub: ["06", "Controller 탭에서 보이는 내용", "Controller 탭은 단순 연결 확인이 아닙니다. 먼저 로컬 client 연결 상태를 보여주고, 컨트롤러 관점의 AP, client, RF 기능으로 들어갈 수 있습니다.", ["로컬 연결: SNR, 연결 AP, 대역, 채널, IP.", "전체 개요: AP 수, client 수, SSID, 채널 상태.", "기능 입구: Clients, Roaming, AP load balancing, Trend history, Controller Config, Application visibility, Channels & RF, Controller status, Discovered services."], "controllerHub"],
+    reportBuilder: ["08", "보고서 생성 화면", "보고서 생성기에서 기본 지도, 지표, 범례, 판정 방식, 테마를 선택합니다. 단순 스크린샷이 아니라 측정 데이터로 A4 보고서를 다시 만듭니다.", ["벽선만 또는 실제 배경이 포함된 기본 지도를 선택합니다.", "다운로드, 지연 시간, 지터, 패킷 손실, 점수, 가능하면 SNR을 선택합니다.", "축척, 히트맵, 범례, 페이지 번호, 합격 판정, 현장 정보를 추가할 수 있습니다."], "reportBuilder"],
+    photoReport: ["09", "현장 사진이 보고서에 들어가는 방식", "Signal Survey에서 지점 사진을 켜면 각 측정 지점에 참고 사진을 붙일 수 있습니다. 보고서 생성 시 Attach site photos를 켜면 PDF 뒤쪽에 추가됩니다.", ["사진은 선택 기능이며 기본값은 꺼짐입니다.", "PDF 뒤쪽에 3 × 3 사진 그리드를 추가하며 페이지당 최대 9장입니다.", "사진 라벨은 측정 지점 번호와 맞춰져 검수 때 확인하기 쉽습니다."], "photoReport"]
+  },
+  "zh-Hans": {
+    controllerHub: ["06", "控制器打开后看到什么", "控制器页不是只显示连接成功，而是把控制器能读到的网络真值整理成入口。你会先看到本机 client 的连接状态，再看到整个控制器角度的 AP、client 与 RF 功能。", ["本机连接：SNR、关联 AP、频段、通道、IP。", "总览：AP 数、client 数、SSID 与通道概况。", "功能入口：Clients、Roaming、AP load balancing、Trend history、Controller Config、Application visibility、Channels & RF、Controller status、Discovered services。"], "controllerHub"],
+    reportBuilder: ["08", "报告生成器长什么样", "报告生成器会先让你选底图、指标、图例、判定方式与报告主题。它不是只把截图丢进 PDF，而是依测点资料重新产生可交付的 A4 报告。", ["可选墙线底图或含实景底图。", "可勾选下载、延迟、抖动、丢包、综合分数与 SNR。", "可加入比例尺、热力图、图例、页码、合格判定与案场信息。"], "reportBuilder"],
+    photoReport: ["09", "测点照片如何进报告", "在讯号侦测页开启测点照片后，每个测点可以拍一张现场参考照片。产生报告时打开 Attach site photos，照片会依测试编号附在报告后段。", ["照片是选用功能，默认不占储存空间。", "PDF 后端会用 3 × 3 网格整理照片，每页最多 9 张。", "照片标签会对应测点编号，方便验收时回看现场位置。"], "photoReport"]
+  }
+};
+
+Object.entries(detailedSteps).forEach(([lang, details]) => {
+  const steps = guide[lang].steps;
+  steps.splice(5, 0, details.controllerHub);
+  steps.push(details.reportBuilder, details.photoReport);
+});
+
+Object.entries(guide).forEach(([, data]) => {
+  data.steps.forEach((step, index) => { step[0] = String(index + 1).padStart(2, "0"); });
+});
+
 const aliases = { zh: "zh-Hant", "zh-TW": "zh-Hant", "zh-HK": "zh-Hant", "zh-MO": "zh-Hant", "zh-CN": "zh-Hans", "zh-SG": "zh-Hans", "ja-JP": "ja", "ko-KR": "ko", "en-US": "en", "en-GB": "en" };
 const select = document.getElementById("languageSelect");
 const themeSelect = document.getElementById("themeSelect");
@@ -143,6 +181,9 @@ function mock(type) {
   if (type === "metrics") return `<div class="phone-mock"><div class="phone-screen"><div class="mock-header"><span class="mock-title">Metrics</span><span class="mock-chip">1 test</span></div><div class="mock-tabs"><span class="mock-tab is-on">Download</span><span class="mock-tab">Latency</span><span class="mock-tab">Jitter</span><span class="mock-tab">Loss</span><span class="mock-tab">Score</span><span class="mock-tab">SNR</span></div><div class="mock-card"><div class="mock-row"><strong>Latest</strong><span>92 Mbps</span></div><div class="mock-row"><span>Latency</span><strong>12 ms</strong></div><div class="mock-row"><span>Jitter</span><strong>3 ms</strong></div><div class="mock-row"><span>Packet loss</span><strong>0%</strong></div></div><div class="mock-card"><div class="mock-gauge"></div></div></div></div>`;
   if (type === "simulation") return `<div class="phone-mock"><div class="phone-screen"><div class="mock-header"><span class="mock-title">Simulation</span><span class="mock-chip">5 GHz</span></div><div class="mock-map"><span class="heat good"></span><span class="heat mid"></span><span class="heat bad"></span>${walls}<b class="ap-dot ap-a">AP</b><b class="ap-dot ap-b">AP</b></div><div class="mock-card"><div class="mock-row"><span>Heatmap detail</span><strong>16 cm</strong></div><div class="mock-row"><span>Band</span><strong>5 GHz</strong></div></div><div class="mock-footer"><span class="mock-button">Clear APs</span></div></div></div>`;
   if (type === "controller") return `<div class="phone-mock"><div class="phone-screen"><div class="mock-header"><span class="mock-title">Controller</span><span class="mock-chip">Advanced</span></div><div class="mock-card"><div class="mock-row"><strong>Local client</strong><span>SNR 45 dB</span></div><div class="mock-row"><span>Associated AP</span><strong>2F</strong></div><div class="mock-row"><span>Band / Channel</span><strong>5 GHz · 36</strong></div></div><div class="mock-card"><div class="mock-row"><span>APs</span><strong>3 online</strong></div><div class="mock-row"><span>Clients</span><strong>28</strong></div><div class="mock-row"><span>Roaming</span><strong>Monitor</strong></div></div></div></div>`;
+  if (type === "controllerHub") return `<div class="phone-mock"><div class="phone-screen"><div class="mock-header"><span class="mock-title">Controller</span><span class="mock-chip">Online</span></div><div class="mock-card"><div class="mock-row"><strong>This device</strong><span>2F · 45 dB</span></div><div class="mock-row"><span>SSID</span><strong>Office-5G</strong></div></div><div class="mock-feature-row"><span>Clients</span><b>28</b></div><div class="mock-feature-row"><span>Roaming</span><b>Live</b></div><div class="mock-feature-row"><span>AP load balancing</span><b>3 AP</b></div><div class="mock-feature-row"><span>Application visibility</span><b>DPI</b></div><div class="mock-feature-row"><span>Channels & RF</span><b>DFS</b></div><div class="mock-feature-row"><span>Controller status</span><b>WAN</b></div></div></div>`;
+  if (type === "reportBuilder") return `<div class="phone-mock"><div class="phone-screen"><div class="mock-header"><span class="mock-title">Generate report</span><span class="mock-chip">A4 PDF</span></div><div class="mock-card"><div class="mock-row"><strong>Base map</strong><span>Walls only</span></div><div class="mock-row"><span>Theme</span><strong>Minimal</strong></div></div><div class="mock-card"><div class="mock-check on">Download heatmap</div><div class="mock-check on">Latency heatmap</div><div class="mock-check">SNR heatmap</div><div class="mock-check on">Show legend</div><div class="mock-check on">Attach site photos</div></div><div class="mock-card"><div class="mock-row"><span>Verdict</span><strong>Overall + per point</strong></div><div class="mock-row"><span>Estimated pages</span><strong>7</strong></div></div><div class="mock-footer"><span class="mock-button">Preview report</span></div></div></div>`;
+  if (type === "photoReport") return `<div class="phone-mock"><div class="phone-screen"><div class="mock-header"><span class="mock-title">Photo appendix</span><span class="mock-chip">Page 7</span></div><div class="mock-report"><div class="mock-report-line"></div><div class="mock-report-line short"></div><div class="photo-grid">${Array.from({ length: 9 }, (_, i) => `<span class="photo-tile"><b>#${i + 1}</b></span>`).join("")}</div><div class="mock-row"><span>Point photos</span><strong>3 × 3 grid</strong></div></div></div></div>`;
   return `<div class="phone-mock"><div class="phone-screen"><div class="mock-header"><span class="mock-title">Report</span><span class="mock-chip">PDF</span></div><div class="mock-report"><div class="mock-report-line"></div><div class="mock-report-line short"></div><div class="mock-map"><span class="heat good"></span><span class="heat mid"></span><span class="heat bad"></span>${walls}<b class="survey-dot dot-a">92</b><b class="survey-dot dot-b">54</b><b class="survey-dot dot-c">21</b></div><div class="mock-report-line"></div><div class="mock-report-line short"></div></div><div class="mock-footer"><span class="mock-button">Generate report</span></div></div></div>`;
 }
 

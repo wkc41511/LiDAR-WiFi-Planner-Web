@@ -506,6 +506,107 @@ h1 {
   width: 58%;
 }
 
+.mock-feature-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 14px;
+  padding: 11px 14px;
+  background: rgba(255, 255, 255, 0.055);
+  border-top: 1px solid rgba(181, 232, 224, 0.11);
+  color: #d5e7e4;
+  font-size: 13px;
+}
+
+.mock-feature-row b {
+  color: #eef8f6;
+  font-size: 12px;
+}
+
+.mock-check {
+  position: relative;
+  margin: 7px 0;
+  padding-left: 30px;
+  color: #d5e7e4;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.mock-check::before {
+  position: absolute;
+  left: 0;
+  top: 1px;
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  color: #061312;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(181, 232, 224, 0.2);
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 900;
+  content: "";
+}
+
+.mock-check.on::before {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  content: "✓";
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 10px 0 4px;
+}
+
+.photo-tile {
+  position: relative;
+  display: block;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(88, 224, 197, 0.18), rgba(167, 240, 109, 0.12)),
+    linear-gradient(160deg, #1e3d39, #0d1d20 52%, #2c5f55);
+  border: 1px solid rgba(181, 232, 224, 0.16);
+  border-radius: 8px;
+}
+
+.photo-tile::before,
+.photo-tile::after {
+  position: absolute;
+  content: "";
+}
+
+.photo-tile::before {
+  left: 12%;
+  right: 12%;
+  bottom: 18%;
+  height: 28%;
+  background: rgba(238, 248, 246, 0.18);
+  clip-path: polygon(0 100%, 34% 22%, 52% 68%, 70% 38%, 100% 100%);
+}
+
+.photo-tile::after {
+  right: 16%;
+  top: 16%;
+  width: 18%;
+  height: 18%;
+  background: rgba(238, 248, 246, 0.28);
+  border-radius: 999px;
+}
+
+.photo-tile b {
+  position: absolute;
+  left: 6px;
+  bottom: 5px;
+  z-index: 1;
+  color: #eef8f6;
+  font-size: 10px;
+}
+
 .mock-gauge {
   height: 8px;
   overflow: hidden;
@@ -704,6 +805,30 @@ body.is-switching #content {
     color: #294946;
   }
 
+  .mock-feature-row {
+    color: #294946;
+    background: rgba(6, 127, 114, 0.06);
+    border-top-color: rgba(4, 95, 85, 0.12);
+  }
+
+  .mock-feature-row b,
+  .mock-check,
+  .photo-tile b {
+    color: #10211f;
+  }
+
+  .mock-check::before {
+    background: rgba(6, 127, 114, 0.08);
+    border-color: rgba(4, 95, 85, 0.18);
+  }
+
+  .photo-tile {
+    background:
+      linear-gradient(135deg, rgba(8, 127, 114, 0.14), rgba(79, 159, 40, 0.12)),
+      linear-gradient(160deg, #d5ebe6, #f6fffc 52%, #9fd7cd);
+    border-color: rgba(4, 95, 85, 0.14);
+  }
+
   .mock-wall {
     background: #173a35;
   }
@@ -820,6 +945,30 @@ html[data-theme="light"] .mock-card {
 
 html[data-theme="light"] .mock-row {
   color: #294946;
+}
+
+html[data-theme="light"] .mock-feature-row {
+  color: #294946;
+  background: rgba(6, 127, 114, 0.06);
+  border-top-color: rgba(4, 95, 85, 0.12);
+}
+
+html[data-theme="light"] .mock-feature-row b,
+html[data-theme="light"] .mock-check,
+html[data-theme="light"] .photo-tile b {
+  color: #10211f;
+}
+
+html[data-theme="light"] .mock-check::before {
+  background: rgba(6, 127, 114, 0.08);
+  border-color: rgba(4, 95, 85, 0.18);
+}
+
+html[data-theme="light"] .photo-tile {
+  background:
+    linear-gradient(135deg, rgba(8, 127, 114, 0.14), rgba(79, 159, 40, 0.12)),
+    linear-gradient(160deg, #d5ebe6, #f6fffc 52%, #9fd7cd);
+  border-color: rgba(4, 95, 85, 0.14);
 }
 
 html[data-theme="light"] .mock-wall {
