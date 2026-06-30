@@ -151,7 +151,7 @@ const themeSelect = document.getElementById("themeSelect");
 function preferredLanguage() {
   const stored = localStorage.getItem("siteLanguage");
   if (stored && common[stored]) return stored;
-  const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "zh-Hant"];
+  const languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"];
   for (const lang of languages) {
     if (common[lang]) return lang;
     if (aliases[lang]) return aliases[lang];
@@ -159,7 +159,7 @@ function preferredLanguage() {
     if (common[base]) return base;
     if (aliases[base]) return aliases[base];
   }
-  return "zh-Hant";
+  return "en";
 }
 
 function preferredTheme() {
@@ -188,7 +188,7 @@ function mock(type) {
 }
 
 function render(lang) {
-  const c = common[lang] || common["zh-Hant"];
+  const c = common[lang] || common["en"];
   const data = guide[lang] || guide.en;
   document.documentElement.lang = c.htmlLang;
   document.title = `LiDAR WiFi Planner - ${c.topline}`;

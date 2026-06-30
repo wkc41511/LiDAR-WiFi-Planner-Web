@@ -198,7 +198,7 @@ function preferredLanguage() {
 
   const languages = navigator.languages && navigator.languages.length
     ? navigator.languages
-    : [navigator.language || "zh-Hant"];
+    : [navigator.language || "en"];
 
   for (const lang of languages) {
     if (translations[lang]) return lang;
@@ -207,7 +207,7 @@ function preferredLanguage() {
     if (translations[base]) return base;
     if (aliases[base]) return aliases[base];
   }
-  return "zh-Hant";
+  return "en";
 }
 
 function preferredTheme() {
@@ -255,7 +255,7 @@ function renderPage(data) {
 }
 
 function applyLanguage(lang) {
-  const data = translations[lang] || translations["zh-Hant"];
+  const data = translations[lang] || translations["en"];
   const pageData = data[page] || data.home;
 
   document.body.classList.add("is-switching");
